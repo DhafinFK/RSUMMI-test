@@ -30,12 +30,6 @@ jobs:
       - name: Generate test coverage
         run: npm test -- --coverage
 
-      - name: Upload Coverage report
-        uses: codecov/codecov-action@v3
-        with:
-          file: ./coverage/lcov.info
-          fail_ci_if_error: true
-
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
