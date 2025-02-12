@@ -39,6 +39,6 @@ jobs:
             -Dsonar.organization=DhafinFK
             -Dsonar.projectKey=dhafinfk
             -Dsonar.sources=src
-            -Dsonar.tests=__tests__
+            -Dsonar.tests=tests
             -Dsonar.test.inclusions="**/*.test.ts"
             -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info
