@@ -36,7 +36,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.organization=DhafinFK
+            -Dsonar.organization=dhafinfk
             -Dsonar.projectKey=DhafinFK_RSUMMI-test
             -Dsonar.sources=src
             -Dsonar.tests=tests
