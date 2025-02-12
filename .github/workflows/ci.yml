@@ -1,4 +1,4 @@
-name: CI - Run Jest Tests
+name: CI - Run Jest Tests & SonarCloud Analysis
 
 on:
   push:
@@ -29,4 +29,30 @@ jobs:
 
       - name: Generate test coverage
         run: npm test -- --coverage
+
+      - name: Upload Coverage report
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage/lcov.info
+          fail_ci_if_error: true
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=<your-sonarcloud-org>
+            -Dsonar.projectKey=<your-sonarcloud-project-key>
+            -Dsonar.sources=src
+            -Dsonar.tests=__tests__
+            -Dsonar.test.inclusions="**/*.test.ts"
+            -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info            -Dsonar.organization=<your-sonarcloud-org>
+            -Dsonar.projectKey=<your-sonarcloud-project-key>
+            -Dsonar.sources=src
+            -Dsonar.tests=__tests__
+            -Dsonar.test.inclusions="**/*.test.ts"
+            -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info
+  
+      
 
