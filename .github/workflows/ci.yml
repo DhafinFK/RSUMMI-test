@@ -41,6 +41,4 @@ jobs:
             -Dsonar.sources=src
             -Dsonar.tests=__tests__
             -Dsonar.test.inclusions="**/*.test.ts"
-            -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info            -Dsonar.organization=<your-sonarcloud-org>
-               
-
+            -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info
