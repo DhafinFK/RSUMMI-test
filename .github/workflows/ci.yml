@@ -37,7 +37,7 @@ jobs:
         with:
           args: >
             -Dsonar.organization=DhafinFK
-            -Dsonar.projectKey=dhafinfk
+            -Dsonar.projectKey=DhafinFK_RSUMMI-test
             -Dsonar.sources=src
             -Dsonar.tests=tests
             -Dsonar.test.inclusions="**/*.test.ts"
