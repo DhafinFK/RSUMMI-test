@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 23  
+          node-version: 22 #LTS  
 
       - name: Install dependencies
         run: npm install
@@ -42,17 +42,11 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.organization=<your-sonarcloud-org>
-            -Dsonar.projectKey=<your-sonarcloud-project-key>
+            -Dsonar.organization=DhafinFK
+            -Dsonar.projectKey=dhafinfk
             -Dsonar.sources=src
             -Dsonar.tests=__tests__
             -Dsonar.test.inclusions="**/*.test.ts"
             -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info            -Dsonar.organization=<your-sonarcloud-org>
-            -Dsonar.projectKey=<your-sonarcloud-project-key>
-            -Dsonar.sources=src
-            -Dsonar.tests=__tests__
-            -Dsonar.test.inclusions="**/*.test.ts"
-            -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info
-  
-      
+               
 
