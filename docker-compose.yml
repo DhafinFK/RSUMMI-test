@@ -3,5 +3,5 @@ services:
     build: .  # Builds from the Dockerfile in this directory
     container_name: express-app
     ports:
-      - "3000:3000"  # Maps container port 3000 to host
+      - "8611:3000"  # Maps container port 3000 to host
     
