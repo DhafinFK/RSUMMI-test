@@ -43,8 +43,8 @@ jobs:
           SONAR_HOST_URL: "https://d257-2404-c0-5c10-00-2c3b-bdce.ngrok-free.app"
         run: | 
           sonar-scanner \
-            -Dsonar.projectKey=your-project-key \
-            -Dsonar.sources=testUmmi \
+            -Dsonar.projectKey=testUmmi \
+            -Dsonar.sources=src \
             -Dsonar.tests=tests \
             -Dsonar.test.inclusions="**/*.test.ts" \
             -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info \
