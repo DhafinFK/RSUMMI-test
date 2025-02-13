@@ -29,24 +29,25 @@ jobs:
 
       - name: Generate test coverage
         run: npm test -- --coverage
-
-      - name: Install SonarScanner
-        run: |
-          curl -sSLo sonar-scanner-cli.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
-          unzip sonar-scanner-cli.zip
-          mv sonar-scanner-5.0.1.3006-linux sonar-scanner
-          echo "$(pwd)/sonar-scanner/bin" >> $GITHUB_PATH
-
-      - name: SonarQube Scan
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: "https://d257-2404-c0-5c10-00-2c3b-bdce.ngrok-free.app"
-        run: | 
-          sonar-scanner \
-            -Dsonar.projectKey=testUmmi \
-            -Dsonar.sources=src \
-            -Dsonar.tests=tests \
-            -Dsonar.test.inclusions="**/*.test.ts" \
-            -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info \
-            -Dsonar.host.url=$SONAR_HOST_URL \
-            -Dsonar.login=$SONAR_TOKEN
+#
+#      - name: Install SonarScanner
+#        run: |
+#          curl -sSLo sonar-scanner-cli.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
+#          unzip sonar-scanner-cli.zip
+#          mv sonar-scanner-5.0.1.3006-linux sonar-scanner
+#          echo "$(pwd)/sonar-scanner/bin" >> $GITHUB_PATH
+#
+#      - name: SonarQube Scan
+#        env:
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#          SONAR_HOST_URL: "https://d257-2404-c0-5c10-00-2c3b-bdce.ngrok-free.app"
+#        run: | 
+#          sonar-scanner \
+#            -Dsonar.projectKey=testUmmi \
+#            -Dsonar.sources=src \
+#            -Dsonar.tests=tests \
+#            -Dsonar.test.inclusions="**/*.test.ts" \
+#            -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info \
+#            -Dsonar.host.url=$SONAR_HOST_URL \
+#            -Dsonar.token=$SONAR_TOKEN
+#
