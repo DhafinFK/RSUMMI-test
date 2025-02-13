@@ -44,7 +44,7 @@ jobs:
         run: | 
           sonar-scanner \
             -Dsonar.projectKey=your-project-key \
-            -Dsonar.sources=src \
+            -Dsonar.sources=testUmmi \
             -Dsonar.tests=tests \
             -Dsonar.test.inclusions="**/*.test.ts" \
             -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info \
